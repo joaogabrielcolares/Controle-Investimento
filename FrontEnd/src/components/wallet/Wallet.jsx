@@ -94,7 +94,7 @@ export default class Wallet extends Component {
 
                     <div className="col-12 col-md-2">
                         <div className="form-group">
-                            <label>E-mail</label>
+                            <label>Quantidade</label>
                             <input type="text" className="form-control"
                                 name="quantidade"
                                 value={this.state.wallet.quantidade}

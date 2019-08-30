@@ -11,7 +11,7 @@ export default props =>
             <Link to="/wallet">
                 <i className="fa fa-accessible-icon"></i> Minha Carteira
             </Link>
-            <Link to="/">
+            <Link to="/transactions">
                 <i className="fa fa-accessible-icon"></i> Transações
             </Link>
         </nav>

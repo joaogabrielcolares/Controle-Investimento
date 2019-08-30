@@ -1,5 +1,12 @@
 {
-  "Wallet": [],
+  "Wallet": [
+    {
+      "paper": "ELET6F ",
+      "quantidade": "5",
+      "precoMedioCompra": "10,50",
+      "id": 1
+    }
+  ],
   "Trasations": [
     {
       "id": 1,

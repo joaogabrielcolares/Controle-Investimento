@@ -1,0 +1,12 @@
+{
+  "Wallet": [],
+  "Trasations": [
+    {
+      "id": 1,
+      "Tipo": "Entrada",
+      "idPaper": 1,
+      "Valor": 44.1,
+      "Data": "10/05/2019"
+    }
+  ]
+}

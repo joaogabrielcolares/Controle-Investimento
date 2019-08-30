@@ -1,0 +1,51 @@
+:root{    
+    /* Cores */
+    --bg-dark: #1A2F3A;
+    
+    /*Tamanhos  */
+    --aside-width: 13rem;
+    --header-height:6rem;
+    --footer-height:4rem;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.app {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: var(--aside-width) 1fr;
+    grid-template-rows: 
+        var(--header-height)
+        1fr
+        var(--footer-height);
+        grid-template-areas:
+        "logo header"
+        "menu content"
+        "menu footer";
+    height: 100vh;
+    background-color: #F5F5F5;
+}
+
+aside.logo{
+    grid-area: logo;
+    background-color: var(--bg-dark);
+}
+
+header.header {
+    grid-area: header;
+}
+
+aside.menu-area {
+    grid-area: menu;
+}
+
+main.content {
+    grid-area: content;
+}
+
+footer.footer {
+    grid-area: footer;
+}

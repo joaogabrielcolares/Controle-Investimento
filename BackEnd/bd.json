@@ -1,9 +1,10 @@
 {
   "Wallet": [
     {
-      "paper": "ELET6F ",
-      "quantidade": "5",
-      "precoMedioCompra": "10,50",
+      "tipo": "Compra",
+      "papel": "TELB4F",
+      "valor": "14.50",
+      "data": "02/09/2019",
       "id": 1
     }
   ],

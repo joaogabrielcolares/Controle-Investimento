@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Main from '../templates/Main'
 import InputText from '../templates/inputs/InputText'
-// import Form from '../templates/Form'
 
 const headerProps = {
     icon: 'Wallets',
@@ -41,9 +40,6 @@ export default class Wallet extends Component {
 
         const method = wallet.id ? 'put' : 'post' //Caso id estiver vazio é um novo usuário, caso contrario atualiza o registro 
         const url = wallet.id ? `${backEndUrl}/${wallet.id}` : backEndUrl
-
-        console.log(url, wallet);
-        console.log(url);
 
         axios[method](url, wallet)
             .then(resp => {

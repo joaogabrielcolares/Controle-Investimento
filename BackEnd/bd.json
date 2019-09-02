@@ -1,35 +1,41 @@
 {
   "Wallet": [
     {
-      "papel": "SULA4f",
-      "quantidade": "1",
-      "precoMedioCompra": "15",
+      "papel": "JGCOL",
+      "quantidade": "2",
+      "precoMedioCompra": "1",
       "id": 1
+    },
+    {
+      "papel": "BPAN4F",
+      "quantidade": "14",
+      "precoMedioCompra": "10.50",
+      "id": 2
     }
   ],
   "Trasactions": [
     {
-      "id": 1,
-      "Tipo": "Entrada",
-      "idPaper": 1,
-      "Valor": 44.1,
-      "quantidade": "15",
-      "Data": "10/05/2019"
+      "tipo": "Compra",
+      "papel": "JGCOL",
+      "valor": "1",
+      "quantidade": "2",
+      "data": "3",
+      "id": 1
     },
     {
       "tipo": "Compra",
-      "papel": "Trasations",
-      "valor": "Trasations",
-      "quantidade": "Trasations",
-      "data": "Trasations",
+      "papel": "BPAN4F",
+      "valor": "10.50",
+      "quantidade": "14",
+      "data": "14/02/2019",
       "id": 2
     },
     {
-      "tipo": "Compra",
-      "papel": "SULA4f",
-      "valor": "10",
-      "quantidade": "15",
-      "data": "hpe",
+      "tipo": "Venda",
+      "papel": "JGCOL",
+      "valor": "15",
+      "quantidade": "41",
+      "data": "",
       "id": 3
     }
   ]

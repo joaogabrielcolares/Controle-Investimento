@@ -7,12 +7,12 @@ import InputText from '../templates/inputs/InputText'
 import SelectText from '../templates/inputs/SelectText'
 
 const backEndUrl = 'http://localhost:3004/Trasactions'
-// const backEndWallet = 'http://localhost:3004/Wallet'
+const backEndWallet = 'http://localhost:3004/Wallet'
 
 const headerProps = {
     icon: '',
     title: 'Transações',
-    subtitle: 'Cadastre suas transações aqui!!!'
+    subtitle: 'Cadastre suas transações aqui! **As informações inseridas aqui influenciam diretamente na sua carteira**'
 }
 const initialState = {
     transaction: {
@@ -24,6 +24,7 @@ const initialState = {
     },
     list: []
 }
+let walletList = {};
 
 export default class Transaction extends Component {
 
@@ -148,24 +149,45 @@ export default class Transaction extends Component {
         })
     }
 
-    save() {
+    async save() {
         const transaction = this.state.transaction
 
         const method = transaction.id ? 'put' : 'post' //Caso id estiver vazio é um novo usuário, caso contrario atualiza o registro
         const url = transaction.id ? `${backEndUrl}/${transaction.id}` : backEndUrl
 
-        this.updateWallet()
+        const updatedWallet = await this.updateWallet()
+        if (updatedWallet) {
+            axios[method](url, transaction)
+                .then(resp => {
+                    const list = this.getUpdatedList(resp.data)
 
-        axios[method](url, transaction)
-            .then(resp => {
-                const list = this.getUpdatedList(resp.data)
-
-                this.setState({ transaction: initialState.transaction, list }) //Limpa o form e atualiza a lista de
-            })
+                    this.setState({ transaction: initialState.transaction, list }) //Limpa o form e atualiza a lista de
+                })
+        }
     }
 
-    updateWallet() {
+    async updateWallet() {
+        let transaction = this.state.transaction
+        let wallet = {
+            papel: transaction.papel,
+            quantidade: transaction.quantidade,
+            precoMedioCompra: transaction.valor
+        }
 
+        const resp = await axios(backEndWallet);
+        walletList = resp.data.filter(u => u.papel === transaction.papel)
+
+        if (!walletList.length || walletList.length === 0) {
+            if (transaction.tipo === "Compra") {
+                axios["post"](backEndWallet, { ...wallet })
+            } else {
+                alert("Não é possível vendar um papel que você não tem!")
+                return false;
+            }
+        } else {
+            console.log('atualiza');
+        }
+        return true;
     }
 
     clear() {

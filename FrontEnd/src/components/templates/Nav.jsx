@@ -8,6 +8,10 @@ export default props =>
             <Link to="/">
                 <i className="fa fa-home"></i> Início
             </Link>
+
+            <Link to="/">
+                <i className="fa fa-accessible-icon"></i> Configuração pessoal
+            </Link>
             <Link to="/wallet">
                 <i className="fa fa-accessible-icon"></i> Minha Carteira
             </Link>

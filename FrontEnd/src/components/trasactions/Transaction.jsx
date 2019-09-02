@@ -170,7 +170,7 @@ export default class Transaction extends Component {
         let transaction = this.state.transaction
         let wallet = {
             papel: transaction.papel,
-            quantidade: transaction.quantidade,
+            quantidade: transaction.tipo === "Venda" ? transaction.quantidade * -1 : transaction.quantidade,
             precoMedioCompra: transaction.valor
         }
 
@@ -178,14 +178,20 @@ export default class Transaction extends Component {
         walletList = resp.data.filter(u => u.papel === transaction.papel)
 
         if (!walletList.length || walletList.length === 0) {
+
             if (transaction.tipo === "Compra") {
                 axios["post"](backEndWallet, { ...wallet })
             } else {
-                alert("Não é possível vendar um papel que você não tem!")
+                alert("Não é possível vender um papel que você não tem!")
                 return false;
             }
         } else {
-            console.log('atualiza');
+            console.log(wallet);
+            console.log('walletList', walletList);
+            wallet.quantidade = Number.parseInt(walletList.quantidade) + Number.parseInt(wallet.quantidade)
+            console.log('walletList', wallet);
+
+            axios["put"](`${backEndWallet}/${wallet.id}`, { ...wallet })
         }
         return true;
     }

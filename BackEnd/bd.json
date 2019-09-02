@@ -17,26 +17,18 @@
     {
       "tipo": "Compra",
       "papel": "JGCOL",
-      "valor": "1",
-      "quantidade": "2",
-      "data": "3",
-      "id": 1
+      "valor": "JGCOL",
+      "quantidade": "JGCOL",
+      "data": "JGCOL",
+      "id": 6
     },
     {
       "tipo": "Compra",
-      "papel": "BPAN4F",
-      "valor": "10.50",
-      "quantidade": "14",
-      "data": "14/02/2019",
-      "id": 2
-    },
-    {
-      "tipo": "Venda",
       "papel": "JGCOL",
-      "valor": "15",
-      "quantidade": "41",
-      "data": "",
-      "id": 3
+      "valor": "1",
+      "quantidade": "1",
+      "data": "1",
+      "id": 7
     }
   ]
 }

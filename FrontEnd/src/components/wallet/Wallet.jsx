@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import axios from 'axios'
 import Main from '../templates/Main'
-// import InputType from '../templates/InputType'
+import InputText from '../templates/inputs/InputText'
 // import Form from '../templates/Form'
 
 const headerProps = {
@@ -15,7 +15,7 @@ const backEndUrl = 'http://localhost:3004/Wallet'
 
 const initialState = {
     wallet: {
-        paper: "",
+        papel: "",
         quantidade: "",
         precoMedioCompra: ""
     },
@@ -81,38 +81,27 @@ export default class Wallet extends Component {
         return (
             <div className="form">
                 <div className="row">
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Papeis</label>
-                            <input type="text" className="form-control"
-                                name="paper"
-                                value={this.state.wallet.paper}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite o papel..." />
-                        </div>
-                    </div>
 
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Quantidade</label>
-                            <input type="text" className="form-control"
-                                name="quantidade"
-                                value={this.state.wallet.quantidade}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite a quantidade..." />
-                        </div>
-                    </div>
+                    <InputText
+                        col_md='2' label='Papeis' name='papel'
+                        value={this.state.wallet.papel}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe o papel"
+                    />
 
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Preco Medio Compra</label>
-                            <input type="text" className="form-control"
-                                name="precoMedioCompra"
-                                value={this.state.wallet.precoMedioCompra}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite a precoMedioCompra..." />
-                        </div>
-                    </div>
+                    <InputText
+                        col_md='2' label='Quantidade' name='quantidade'
+                        value={this.state.wallet.quantidade}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe a quantidade"
+                    />
+
+                    <InputText
+                        col_md='2' label='Preço Médio de compra' name='precoMedioCompra'
+                        value={this.state.wallet.precoMedioCompra}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe a preço medio da compra"
+                    />
                 </div>
 
                 <hr />
@@ -140,8 +129,8 @@ export default class Wallet extends Component {
                     <tr>
                         <th>ID</th>
                         <th>Papel</th>
-                        <th>Valor Médio</th>
                         <th>Quantidade</th>
+                        <th>Valor Médio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -156,9 +145,10 @@ export default class Wallet extends Component {
             return (
                 <tr key={wallet.id}>
                     <td>{wallet.id}</td>
-                    <td>{wallet.paper}</td>
-                    <td>{wallet.precoMedioCompra}</td>
+                    <td>{wallet.papel}</td>
                     <td>{wallet.quantidade}</td>
+                    <td>{wallet.precoMedioCompra}</td>
+
                     <td>
                         <button className="btn btn-warning"
                             onClick={() => this.load(wallet)}>

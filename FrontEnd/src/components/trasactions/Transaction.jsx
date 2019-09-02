@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+
 import axios from 'axios'
 import Main from '../templates/Main'
+import Form from '../templates/Form'
+import InputText from '../templates/inputs/InputText'
+import SelectText from '../templates/inputs/SelectText'
 
-const backEndUrl = 'http://localhost:3004/Wallet'
+const backEndUrl = 'http://localhost:3004/Trasactions'
+// const backEndWallet = 'http://localhost:3004/Wallet'
 
 const headerProps = {
     icon: '',
@@ -14,6 +19,7 @@ const initialState = {
         tipo: "Compra",
         papel: "",
         valor: "",
+        quantidade: "",
         data: ""
     },
     list: []
@@ -31,52 +37,48 @@ export default class Transaction extends Component {
 
     renderForm() {
         return (
-            <div className="form">
+            <Form>
                 <div className="row">
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Tipo da Operação</label>
-                            <select name="tipo" className="form-control"
-                                onChange={e => this.updateField(e)}
-                                value={this.state.transaction.tipo}>
-                                <option value="Compra">Compra</option>
-                                <option value="Venda">Venda</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Papel</label>
-                            <input type="text" className="form-control"
-                                name="papel"
-                                value={this.state.transaction.papel}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite o papel..." />
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Valor</label>
-                            <input type="text" className="form-control"
-                                name="valor"
-                                value={this.state.transaction.valor}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite o valor..." />
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-2">
-                        <div className="form-group">
-                            <label>Data</label>
-                            <input type="text" className="form-control"
-                                name="data"
-                                value={this.state.transaction.data}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Informe a data..." />
-                        </div>
-                    </div>
+                    <SelectText
+                        col_md='2' label='Tipo de transição' name='tipo'
+                        value={this.state.transaction.tipo}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe o tipo">
+                        <option value="Compra">Compra</option>
+                        <option value="Venda">Venda</option>
+                    </SelectText>
+
+                    <InputText
+                        col_md='2' label='Papel' name='papel'
+                        value={this.state.transaction.papel}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe o papel"
+                    />
+
+                    <InputText
+                        col_md='2' label='Valor' name='valor'
+                        value={this.state.transaction.valor}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe o Valor"
+                    />
+
+                    <InputText
+                        col_md='2' label='Quantidade' name='quantidade'
+                        value={this.state.transaction.quantidade}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe a quantidade"
+                    />
+
+                    <InputText
+                        col_md='2' label='Data' name='data'
+                        value={this.state.transaction.data}
+                        onChange={e => this.updateField(e)}
+                        placeholder="Informe o Data"
+                    />
                 </div>
 
                 <hr />
+
                 <div className="row">
                     <div className="col-12 d-flex justify-content-end">
                         <button className="btn btn-primary"
@@ -90,7 +92,7 @@ export default class Transaction extends Component {
                         </button>
                     </div>
                 </div>
-            </div>
+            </Form >
         )
     }
 
@@ -110,6 +112,7 @@ export default class Transaction extends Component {
                         <th>Tipo</th>
                         <th>Papel</th>
                         <th>Valor Médio</th>
+                        <th>Quantidade</th>
                         <th>Data</th>
                     </tr>
                 </thead>
@@ -128,6 +131,7 @@ export default class Transaction extends Component {
                     <td>{transaction.tipo}</td>
                     <td>{transaction.papel}</td>
                     <td>{transaction.valor}</td>
+                    <td>{transaction.quantidade}</td>
                     <td>{transaction.data}</td>
                     <td>
                         <button className="btn btn-warning"
@@ -147,11 +151,10 @@ export default class Transaction extends Component {
     save() {
         const transaction = this.state.transaction
 
-        const method = transaction.id ? 'put' : 'post' //Caso id estiver vazio é um novo usuário, caso contrario atualiza o registro 
+        const method = transaction.id ? 'put' : 'post' //Caso id estiver vazio é um novo usuário, caso contrario atualiza o registro
         const url = transaction.id ? `${backEndUrl}/${transaction.id}` : backEndUrl
 
-        console.log(url, transaction);
-        console.log(url);
+        this.updateWallet()
 
         axios[method](url, transaction)
             .then(resp => {
@@ -159,6 +162,10 @@ export default class Transaction extends Component {
 
                 this.setState({ transaction: initialState.transaction, list }) //Limpa o form e atualiza a lista de
             })
+    }
+
+    updateWallet() {
+
     }
 
     clear() {

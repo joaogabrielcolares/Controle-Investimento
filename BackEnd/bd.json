@@ -1,20 +1,36 @@
 {
   "Wallet": [
     {
-      "tipo": "Compra",
-      "papel": "TELB4F",
-      "valor": "14.50",
-      "data": "02/09/2019",
+      "papel": "SULA4f",
+      "quantidade": "1",
+      "precoMedioCompra": "15",
       "id": 1
     }
   ],
-  "Trasations": [
+  "Trasactions": [
     {
       "id": 1,
       "Tipo": "Entrada",
       "idPaper": 1,
       "Valor": 44.1,
+      "quantidade": "15",
       "Data": "10/05/2019"
+    },
+    {
+      "tipo": "Compra",
+      "papel": "Trasations",
+      "valor": "Trasations",
+      "quantidade": "Trasations",
+      "data": "Trasations",
+      "id": 2
+    },
+    {
+      "tipo": "Compra",
+      "papel": "SULA4f",
+      "valor": "10",
+      "quantidade": "15",
+      "data": "hpe",
+      "id": 3
     }
   ]
 }

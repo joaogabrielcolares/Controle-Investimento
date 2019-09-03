@@ -2,8 +2,8 @@
   "Wallet": [
     {
       "papel": "BPAN4F",
-      "quantidade": 60,
-      "precoMedioCompra": "$9,50",
+      "quantidade": 80,
+      "precoMedioCompra": "10.40",
       "id": 1
     }
   ],
@@ -11,17 +11,17 @@
     {
       "tipo": "Compra",
       "papel": "BPAN4F",
-      "valor": "$9,27",
-      "quantidade": "40",
-      "data": "03/09/2019",
+      "valor": "10",
+      "quantidade": "10",
+      "data": "2019-09-03",
       "id": 1
     },
     {
       "tipo": "Compra",
       "papel": "BPAN4F",
-      "valor": "$9,50",
-      "quantidade": "20",
-      "data": "05/06/2019",
+      "valor": "10.40",
+      "quantidade": "10",
+      "data": "2019-12-19",
       "id": 2
     }
   ]

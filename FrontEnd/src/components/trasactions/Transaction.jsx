@@ -50,28 +50,28 @@ export default class Transaction extends Component {
                     </SelectText>
 
                     <InputText
-                        col_md='2' label='Papel' name='papel'
+                        col_md='2' label='Papel' name='papel' type="text"
                         value={this.state.transaction.papel}
                         onChange={e => this.updateField(e)}
                         placeholder="Informe o papel"
                     />
 
                     <InputText
-                        col_md='2' label='Valor' name='valor'
+                        col_md='2' label='Valor' name='valor' type="text"
                         value={this.state.transaction.valor}
                         onChange={e => this.updateField(e)}
                         placeholder="Informe o Valor"
                     />
 
                     <InputText
-                        col_md='2' label='Quantidade' name='quantidade'
+                        col_md='2' label='Quantidade' name='quantidade' type="number"
                         value={this.state.transaction.quantidade}
                         onChange={e => this.updateField(e)}
                         placeholder="Informe a quantidade"
                     />
 
                     <InputText
-                        col_md='2' label='Data' name='data'
+                        col_md='2' label='Data' name='data' type="date"
                         value={this.state.transaction.data}
                         onChange={e => this.updateField(e)}
                         placeholder="Informe o Data"

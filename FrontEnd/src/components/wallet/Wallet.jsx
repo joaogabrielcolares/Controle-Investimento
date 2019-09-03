@@ -4,8 +4,9 @@ import axios from 'axios'
 import Main from '../templates/Main'
 import InputText from '../templates/inputs/InputText'
 
+
 const headerProps = {
-    icon: 'Wallets',
+    icon: "",
     title: 'Carteira',
     subtitle: 'Administre sua carteira aqui!!!'
 }

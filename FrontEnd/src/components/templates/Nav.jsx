@@ -10,13 +10,13 @@ export default props =>
             </Link>
 
             <Link to="/">
-                <i className="fa fa-accessible-icon"></i> Configuração pessoal
+                <i className="fa fa-cog"></i> Configuração pessoal
             </Link>
             <Link to="/wallet">
-                <i className="fa fa-accessible-icon"></i> Minha Carteira
+                <i className="fa fa-th-list"></i> Minha Carteira
             </Link>
             <Link to="/transactions">
-                <i className="fa fa-accessible-icon"></i> Transações
+                <i className="fa fa-handshake-o"></i> Transações
             </Link>
         </nav>
     </aside>

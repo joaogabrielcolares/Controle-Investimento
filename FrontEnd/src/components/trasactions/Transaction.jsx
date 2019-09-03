@@ -10,9 +10,10 @@ const backEndUrl = 'http://localhost:3004/Trasactions'
 const backEndWallet = 'http://localhost:3004/Wallet'
 
 const headerProps = {
-    icon: '',
+    icon: 'handshake-o',
     title: 'Transações',
-    subtitle: 'Cadastre suas transações aqui! **As informações inseridas aqui influenciam diretamente na sua carteira**'
+    subtitle: 'Cadastre suas transações aqui!',
+    obs: '** As informações inseridas aqui influenciam diretamente na sua carteira** '
 }
 const initialState = {
     transaction: {
@@ -185,8 +186,21 @@ export default class Transaction extends Component {
                 return false;
             }
         } else {
+            if (transaction.tipo === "Compra") {
+                wallet.precoMedioCompra = (Number.parseInt(walletList[0].precoMedioCompra) + Number.parseInt(wallet.precoMedioCompra)) / (Number.parseInt(walletList[0].quantidade) + Number.parseInt(wallet.quantidade))
+            }
+            else {
+                wallet.precoMedioCompra = walletList[0].precoMedioCompra + ((wallet.precoMedioCompra - walletList[0].precoMedioCompra) * wallet.quantidade)
+            }
+
             wallet.quantidade = Number.parseInt(walletList[0].quantidade) + Number.parseInt(wallet.quantidade)
-            axios['put'](`${backEndWallet}/${walletList[0].id}`, { ...wallet })
+
+            if (wallet.quantidade <= 0) {
+                axios['delete'](`${backEndWallet}/${walletList[0].id}`)
+            } else {
+                axios['put'](`${backEndWallet}/${walletList[0].id}`, { ...wallet })
+            }
+
         }
         return true;
     }

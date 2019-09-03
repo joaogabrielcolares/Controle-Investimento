@@ -6,7 +6,7 @@ import InputText from '../templates/inputs/InputText'
 
 
 const headerProps = {
-    icon: "",
+    icon: "th-list",
     title: 'Carteira',
     subtitle: 'Administre sua carteira aqui!!!'
 }
@@ -127,7 +127,7 @@ export default class Wallet extends Component {
                         <th>ID</th>
                         <th>Papel</th>
                         <th>Quantidade</th>
-                        <th>Valor Médio</th>
+                        <th>Valor Médio de Compra</th>
                     </tr>
                 </thead>
                 <tbody>

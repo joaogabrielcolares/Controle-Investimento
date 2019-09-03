@@ -4,7 +4,7 @@
     
     /*Tamanhos  */
     --aside-width: 13rem;
-    --header-height:6rem;
+    --header-height:8rem;
     --footer-height:4rem;
 }
 
@@ -36,6 +36,8 @@ aside.logo{
 
 header.header {
     grid-area: header;
+    display: flex;
+    justify-content: center
 }
 
 aside.menu-area {

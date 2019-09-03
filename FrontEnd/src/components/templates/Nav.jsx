@@ -18,5 +18,11 @@ export default props =>
             <Link to="/transactions">
                 <i className="fa fa-handshake-o"></i> Transações
             </Link>
+            <Link to="/">
+                <i className="fa fa-file"></i> Relatórios
+            </Link>
+            <Link to="/">
+                <i className="fa fa-calculator"></i> Contabilidade
+            </Link>
         </nav>
     </aside>

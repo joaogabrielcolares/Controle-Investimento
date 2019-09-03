@@ -128,6 +128,7 @@ export default class Wallet extends Component {
                         <th>Papel</th>
                         <th>Quantidade</th>
                         <th>Valor Médio de Compra</th>
+                        <th>Sugestão valor de Venda</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -145,6 +146,7 @@ export default class Wallet extends Component {
                     <td>{wallet.papel}</td>
                     <td>{wallet.quantidade}</td>
                     <td>{wallet.precoMedioCompra}</td>
+                    <td>{""}</td>
 
                     <td>
                         <button className="btn btn-warning"

@@ -7,22 +7,5 @@
       "id": 1
     }
   ],
-  "Trasactions": [
-    {
-      "tipo": "Compra",
-      "papel": "jg",
-      "valor": "10",
-      "quantidade": "1",
-      "data": "",
-      "id": 1
-    },
-    {
-      "tipo": "Compra",
-      "papel": "jg",
-      "valor": "30",
-      "quantidade": "2",
-      "data": "",
-      "id": 2
-    }
-  ]
+  "Trasactions": []
 }

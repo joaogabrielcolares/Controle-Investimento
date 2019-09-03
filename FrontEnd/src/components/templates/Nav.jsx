@@ -9,7 +9,7 @@ export default props =>
                 <i className="fa fa-home"></i> Início
             </Link>
 
-            <Link to="/">
+            <Link to="/personalSettings">
                 <i className="fa fa-cog"></i> Configuração pessoal
             </Link>
             <Link to="/wallet">

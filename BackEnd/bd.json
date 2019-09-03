@@ -1,34 +1,28 @@
 {
   "Wallet": [
     {
-      "papel": "JGCOL",
-      "quantidade": "2",
-      "precoMedioCompra": "1",
-      "id": 1
-    },
-    {
       "papel": "BPAN4F",
-      "quantidade": "14",
-      "precoMedioCompra": "10.50",
-      "id": 2
+      "quantidade": 60,
+      "precoMedioCompra": "$9,50",
+      "id": 1
     }
   ],
   "Trasactions": [
     {
       "tipo": "Compra",
-      "papel": "JGCOL",
-      "valor": "JGCOL",
-      "quantidade": "JGCOL",
-      "data": "JGCOL",
-      "id": 6
+      "papel": "BPAN4F",
+      "valor": "$9,27",
+      "quantidade": "40",
+      "data": "03/09/2019",
+      "id": 1
     },
     {
       "tipo": "Compra",
-      "papel": "JGCOL",
-      "valor": "1",
-      "quantidade": "1",
-      "data": "1",
-      "id": 7
+      "papel": "BPAN4F",
+      "valor": "$9,50",
+      "quantidade": "20",
+      "data": "05/06/2019",
+      "id": 2
     }
   ]
 }

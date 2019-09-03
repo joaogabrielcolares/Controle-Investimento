@@ -178,7 +178,6 @@ export default class Transaction extends Component {
         walletList = resp.data.filter(u => u.papel === transaction.papel)
 
         if (!walletList.length || walletList.length === 0) {
-
             if (transaction.tipo === "Compra") {
                 axios["post"](backEndWallet, { ...wallet })
             } else {
@@ -186,12 +185,8 @@ export default class Transaction extends Component {
                 return false;
             }
         } else {
-            console.log(wallet);
-            console.log('walletList', walletList);
-            wallet.quantidade = Number.parseInt(walletList.quantidade) + Number.parseInt(wallet.quantidade)
-            console.log('walletList', wallet);
-
-            axios["put"](`${backEndWallet}/${wallet.id}`, { ...wallet })
+            wallet.quantidade = Number.parseInt(walletList[0].quantidade) + Number.parseInt(wallet.quantidade)
+            axios['put'](`${backEndWallet}/${walletList[0].id}`, { ...wallet })
         }
         return true;
     }

@@ -8,7 +8,6 @@ const headerProps = {
 }
 
 export default class PersonalSetting extends Component {
-
     render() {
         return (
             <Main {...headerProps}>
@@ -23,9 +22,7 @@ export default class PersonalSetting extends Component {
                         Salvar
                     </button>
                 </div>
-
             </Main>
         )
     }
-
 }

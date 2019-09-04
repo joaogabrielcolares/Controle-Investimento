@@ -49,10 +49,10 @@ export default class Transaction extends Component {
                         <option value="Compra">Compra</option>
                         <option value="Venda">Venda</option>
                     </SelectText>
-
-                    <InputText
-                        col_md='2' label='Papel' name='papel' type="text"
-                        value={this.state.transaction.papel}
+carregaNoticias
+                  carregaNoticias  <InputText
+                  carregaNoticias      col_md='2' label='Papel' name='papel' type="text"
+                  carregaNoticias      value={this.state.transaction.papel}
                         onChange={e => this.updateField(e)}
                         placeholder="Informe o papel"
                     />
@@ -60,16 +60,16 @@ export default class Transaction extends Component {
                     <InputText
                         col_md='2' label='Valor' name='valor' type="text"
                         value={this.state.transaction.valor}
-                        onChange={e => this.updateField(e)}
-                        placeholder="Informe o Valor"
-                    />
-
-                    <InputText
-                        col_md='2' label='Quantidade' name='quantidade' type="number"
-                        value={this.state.transaction.quantidade}
-                        onChange={e => this.updateField(e)}
-                        placeholder="Informe a quantidade"
-                    />
+                  carregaNoticias      onChange={e => this.updateField(e)}
+                  carregaNoticias      placeholder="Informe o Valor"
+                  carregaNoticias  />
+carregaNoticias
+                  carregaNoticias  <InputText
+                  carregaNoticias      col_md='2' label='Quantidade' name='quantidade' type="number"
+                  carregaNoticias      value={this.state.transaction.quantidade}
+                  carregaNoticias      onChange={e => this.updateField(e)}
+                  carregaNoticias      placeholder="Informe a quantidade"
+                  carregaNoticias  />
 
                     <InputText
                         col_md='2' label='Data' name='data' type="date"

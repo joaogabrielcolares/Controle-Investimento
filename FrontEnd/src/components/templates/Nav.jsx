@@ -18,6 +18,9 @@ export default props =>
             <Link to="/transactions">
                 <i className="fa fa-handshake-o"></i> Transações
             </Link>
+            <Link to="/news">
+                <i className="fa fa-newspaper-o"></i> Noticias
+            </Link>
             <Link to="/">
                 <i className="fa fa-file"></i> Relatórios
             </Link>

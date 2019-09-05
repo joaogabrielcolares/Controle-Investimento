@@ -5,7 +5,30 @@
       "quantidade": 3,
       "precoMedioCompra": 13.333333333333334,
       "id": 1
+    },
+    {
+      "papel": "gust",
+      "quantidade": 3,
+      "precoMedioCompra": 6.666666666666667,
+      "id": 2
     }
   ],
-  "Trasactions": []
+  "Trasactions": [
+    {
+      "tipo": "Compra",
+      "papel": "gust",
+      "valor": "10",
+      "quantidade": "1",
+      "data": "2019-09-05",
+      "id": 1
+    },
+    {
+      "tipo": "Compra",
+      "papel": "gust",
+      "valor": "10",
+      "quantidade": "2",
+      "data": "",
+      "id": 2
+    }
+  ]
 }

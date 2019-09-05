@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import Main from '../templates/Main'
-import { object } from 'prop-types';
-import './home.css'
 
-let Rss = require('rss-parser')
-let rss = new Rss();
+
 const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
 const ulrGloboEconomia = 'http://g1.globo.com/dynamo/economia/rss2.xml'
 
+let Rss = require('rss-parser')
+let rss = new Rss();
+
 let noticias = {}
 
-export default class Home extends Component {
+const headerProps = {
+    icon: 'newspaper-o',
+    title: 'Noticias do Mercado',
+    subtitle: 'Fique por dentro de tudo que acontece!',
 
+}
+
+export default class News extends Component {
     constructor(props) {
         super();
 
@@ -33,7 +39,6 @@ export default class Home extends Component {
         return noticias.items.map(noticia => {
             return (
                 <div className="news">
-
                     <h5><a href={noticia.link}>{noticia.title}</a></h5>
                     <br />
                     <p>{noticia.contentSnippet}</p>
@@ -47,9 +52,8 @@ export default class Home extends Component {
     render() {
         if (this.state.loading === 'initial') {
             return (
-                <Main icon="home" title="Home"
-                    subtitle="Sua plataforma de investimento!!!">
-                    <div className='display-4'>Bem Vindo!</div>
+                <Main{...headerProps}>
+                    <div className='display-4'>Noticias!</div>
                     <hr />
                     <p className="mb-0"> Acompanhe as noticias</p>
                 </Main>
@@ -57,19 +61,14 @@ export default class Home extends Component {
         }
 
         return (
-            <Main icon="home" title="Home"
-                subtitle="Sua plataforma de investimento!!!">
-                <div className='display-4'>Bem Vindo!</div>
+            <Main{...headerProps}>
+                < div className='display-4' > Noticias!</div >
                 <hr />
-                <p className="mb-0"> Plataforma para você investir com inteligencia!</p>
+                <p className="mb-0"> Acompanhe as noticias!</p>
                 <hr />
-                <h1 className='align=center'>Noticias</h1>
-                <hr />
-                {console.log(noticias)}
-
                 {this.renderNews()}
 
-            </Main>
+            </Main >
         )
 
 

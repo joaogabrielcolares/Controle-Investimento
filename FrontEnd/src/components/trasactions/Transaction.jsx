@@ -15,7 +15,7 @@ const headerProps = {
     icon: 'handshake-o',
     title: 'Transações',
     subtitle: 'Cadastre suas transações aqui!',
-    obs: '** As informações inseridas aqui influenciam diretamente na sua carteira** '
+    obs: 'As informações inseridas aqui influenciam diretamente na sua carteira'
 }
 const initialState = {
     transaction: {
@@ -101,7 +101,7 @@ export default class Transaction extends Component {
     }
 
     updateField(event) {
-        const transaction = { ...this.state.transaction } //Nunca altere diretamente o estado, sempre clone depois use o setState
+        const transaction = { ...this.state.transaction }
 
         transaction[event.target.name] = event.target.value
         this.setState({ transaction })

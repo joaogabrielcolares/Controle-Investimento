@@ -1,0 +1,11 @@
+.news{   
+
+    display: grid;
+    padding: 3px;
+    grid-template-columns: repeat(3,1fr);
+    box-sizing: border-box;
+    grid-gap: 30px;   
+    font-size: 14px;
+    line-height: 20px;
+    
+}
